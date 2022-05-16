@@ -24,6 +24,11 @@ class Library {
 	public void getBooks() {
 		for(Map.Entry<Book,Integer> entry : books.entrySet()){
 			System.out.println("Key = " + entry.getKey() +", Value = " + entry.getValue());
+
 		}
+	}
+
+	public void getBook(String bookTitle) {
+		System.out.println(bookTitle);
 	}
 }

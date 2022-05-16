@@ -18,38 +18,49 @@ class Application{
 		library.addBooks(books3, 3);
 		library.addBooks(books4, 4);
 
-		System.out.println("1-Learner\t2-Librarian\t3-Exit");
-		int inputFromUser=input.nextInt();
-
-		if(inputFromUser==1){
-			System.out.println("Welcome");
-			System.out.println("1-View all available books\t2-Search a Book with name");
-			int learnerOption=input.nextInt();
-			if(learnerOption==1){
-				System.out.println("Available Books");
-			}
-			if(learnerOption==2){
-				System.out.println("Book");
-			}
-		}
-
-		if(inputFromUser==2){
-			System.out.println("1-View all Books\t2-Add Book(s)");
-			int librarianOption=input.nextInt();
-			if(librarianOption==1){
-				library.getBooks();
-			}
-			if(librarianOption==2){
-				String title,author,journal;
-
-				long isbn = Long.parseLong(String.valueOf(input.nextLong()));
-				System.out.println(isbn);
-				title=input.nextLine();
-				author=input.nextLine();
-				journal=input.nextLine();
-				new Book(isbn,author,title,journal);
-				library.getBooks();
-			}
-		}
+		library.getBooks();
+//		Book book5=new Book(600,"OS","barath","barath-journal");
+//		library.addBooks(book5,2);
+//		library.getBooks();x
+			System.out.println("Enter Book Title");
+			String booktitle=input.nextLine();
+			library.getBook(booktitle);
+//		System.out.println("1-Learner\t2-Librarian\t3-Exit");
+//		int inputFromUser=input.nextInt();
+//
+//		if(inputFromUser==1){
+//			System.out.println("Welcome");
+//			System.out.println("1-View all available books\t2-Search a Book with name");
+//			int learnerOption=input.nextInt();
+//			if(learnerOption==1){
+//				System.out.println("Available Books");
+//			}
+//			if(learnerOption==2){
+//				System.out.println("Book");
+//			}
+//		}
+//
+//		if(inputFromUser==2){
+//			System.out.println("1-View all Books\t2-Add Book(s)");
+//			int librarianOption=input.nextInt();
+//			if(librarianOption==1){
+////				library.getBooks();
+//			}
+//			if(librarianOption==2){
+//				String title,author,journal;
+//
+//				long isbn = Long.parseLong(String.valueOf(input.nextLong()));
+//				System.out.println(isbn);
+//				title=input.nextLine();
+//				author=input.nextLine();
+//				journal=input.nextLine();
+//				new Book(isbn,author,title,journal);
+//				library.getBooks();
+//			}
+//		}
+//		if(inputFromUser==3){
+//
+//			System.exit(0);
+//		}
 	}
 }
