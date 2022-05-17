@@ -11,9 +11,24 @@ class Book {
 		this.journal = journal;
 	}
 
-
-	@Override
-	public int hashCode() {
-		return (int) this.isbn;
+	public String getJournal() {
+		return journal;
 	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public long getIsbn() {
+		return isbn;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+//	@Override
+//	public int hashCode() {
+//		return (int) this.isbn;
+//	}
 }

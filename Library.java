@@ -22,13 +22,20 @@ class Library {
 	}
 
 	public void getBooks() {
+		System.out.println("ISBN\tTITLE\tAUTHOR\tJOURNAL\tQUANTITY");
 		for(Map.Entry<Book,Integer> entry : books.entrySet()){
-			System.out.println("Key = " + entry.getKey() +", Value = " + entry.getValue());
-
+			System.out.println(entry.getKey().getIsbn()+"\t\t"+entry.getKey().getTitle()+"\t"+entry.getKey().getAuthor()+"\t"+entry.getKey().getAuthor()+"\t"+entry.getKey().getJournal());
 		}
 	}
 
-	public void getBook(String bookTitle) {
-		System.out.println(bookTitle);
-	}
+	public void getSearchBook(String searchBook) {
+		for(Map.Entry<Book,Integer> entry : books.entrySet()) {
+			if (entry.getKey().getTitle() == searchBook) {
+
+				System.out.println(entry.getKey().getIsbn()+"\t\t"+entry.getKey().getTitle()+"\t"+entry.getKey().getAuthor()+"\t"+entry.getKey().getAuthor()+"\t"+entry.getKey().getJournal());
+				break;
+			}
+			System.out.println(entry.getKey().getTitle());
+		}
+	};
 }
