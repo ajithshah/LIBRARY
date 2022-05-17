@@ -16,26 +16,44 @@ class Library {
 		return library;
 	};
 
+
 	public void addBooks(Book book, int quantity) {
 		int existingQuantity = this.books.getOrDefault(book, 0);
 		this.books.put(book, existingQuantity + quantity);
 	}
 
-	public void getBooks() {
-		System.out.println("ISBN\tTITLE\tAUTHOR\tJOURNAL\tQUANTITY");
+
+	public void getBook() {
+		System.out.println("ISBN\tTITLE\tAUTHOR\tJOURNAL");
 		for(Map.Entry<Book,Integer> entry : books.entrySet()){
-			System.out.println(entry.getKey().getIsbn()+"\t\t"+entry.getKey().getTitle()+"\t"+entry.getKey().getAuthor()+"\t"+entry.getKey().getAuthor()+"\t"+entry.getKey().getJournal());
+			if(entry.getValue()>0) {
+				System.out.println(entry.getKey().getIsbn() + "\t\t" + entry.getKey().getTitle() +"\t" + entry.getKey().getAuthor() + "\t" + entry.getKey().getJournal());
+			}
 		}
 	}
 
-	public void getSearchBook(String searchBook) {
-		for(Map.Entry<Book,Integer> entry : books.entrySet()) {
-			if (entry.getKey().getTitle() == searchBook) {
+	public void getBooks() {
+		System.out.println("ISBN\tTITLE\tAUTHOR\tJOURNAL\tQUANTITY");
+		for(Map.Entry<Book,Integer> entry : books.entrySet()){
+			System.out.println(entry.getKey().getIsbn()+"\t\t"+entry.getKey().getTitle()+"\t"+entry.getKey().getAuthor()+"\t"+entry.getKey().getJournal()+"\t"+entry.getValue());
+		}
+	}
 
-				System.out.println(entry.getKey().getIsbn()+"\t\t"+entry.getKey().getTitle()+"\t"+entry.getKey().getAuthor()+"\t"+entry.getKey().getAuthor()+"\t"+entry.getKey().getJournal());
+
+	public void getSearchBook(String searchBook) {
+		System.out.println("ISBN\tTITLE\tAUTHOR\tJOURNAL");
+		for(Map.Entry<Book,Integer> entry : books.entrySet()) {
+			if (entry.getKey().getTitle().equals(searchBook)) {
+				System.out.println(entry.getKey().getIsbn()+"\t\t"+entry.getKey().getTitle()+"\t"+entry.getKey().getAuthor()+"\t"+entry.getKey().getJournal());
 				break;
 			}
-			System.out.println(entry.getKey().getTitle());
+		}
+	}
+
+	void getBookTitle() {
+		System.out.println("ISBN\tTITLE");
+		for(Map.Entry<Book,Integer> entry : books.entrySet()){
+			System.out.println(entry.getKey().getIsbn()+"\t\t"+entry.getKey().getTitle());
 		}
 	};
 }
