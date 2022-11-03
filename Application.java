@@ -61,8 +61,8 @@ class Application{
 					String journal = input.nextLine();
 					Book bok1 = new Book(isbn, title, author, journal);
 					System.out.println("Book Quatity");
-					int bookQualtity = input.nextInt();
-					library.addBooks(bok1, bookQualtity);
+					int bookQuality = input.nextInt();
+					library.addBooks(bok1, bookQuality);
 					library.getBooks();
 				}
 			}
