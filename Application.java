@@ -25,8 +25,8 @@ class Application{
 		int inputFromUser = input.nextInt();
 		while (inputFromUser != 3) {
 
+			System.out.println("Welcome");
 			if (inputFromUser == 1) {
-				System.out.println("Welcome");
 				System.out.println("1-View all available books\t2-Search a Book with Title");
 				int learnerOption = input.nextInt();
 				if (learnerOption == 1) {
